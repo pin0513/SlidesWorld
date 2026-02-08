@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary files
+*.swp
+*.swo
+*~
+.tmp
+
+# Claude Code cache
+.claude/cache/
+
+# Logs
+*.log
+
+# Output files
+*.pdf
+*.pptx
+output/
+exports/
+
+# Node modules (if using npm for slide tools)
+node_modules/
+package-lock.json
+
+# Python (if using Python scripts)
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
