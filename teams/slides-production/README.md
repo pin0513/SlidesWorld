@@ -6,9 +6,10 @@ A professional slide production team following an 8-phase workflow from requirem
 
 **Team Name**: slides-production
 **Deployment Mode**: Subagent (sequential workflow with Production Director coordination)
-**Total Agents**: 14 (1 coordinator + 13 specialists)
-**Workflow Phases**: 8 phases with quality gates
+**Total Agents**: 17 (1 coordinator + 16 specialists)
+**Workflow Phases**: 8 phases with quality gates (Phase 5.4 added for data visualization)
 **Specialized Modes**: MAYO Brand, Executive Reporting, English Teaching
+**Data Visualization**: Interactive charts (Chart.js, D3.js, ECharts, ApexCharts), Mermaid diagrams, responsive design
 
 ---
 
@@ -26,6 +27,9 @@ A professional slide production team following an 8-phase workflow from requirem
 - **Story Designer** (`design/story-designer.md`) - Structures narrative arc and slide-by-slide outline
 - **Visual Designer** (`design/visual-designer.md`) - Designs color palette, typography, layouts
 - **Image Specialist** (`design/image-specialist.md`) - Generates AI images and sources stock photos
+- **Web Chart Designer** (`design/web-chart-designer.md`) - Creates interactive charts and diagrams using JavaScript libraries
+- **Data Transformer** (`design/data-transformer.md`) - Transforms raw data (Excel, CSV, JSON) into visualization-ready formats
+- **Responsive Specialist** (`design/responsive-specialist.md`) - Ensures charts render correctly on mobile, tablet, desktop
 
 ### Production Agents (Phase 5-6)
 - **Slide Builder** (`production/slide-builder.md`) - Builds slides in Google Slides format
@@ -75,9 +79,13 @@ A professional slide production team following an 8-phase workflow from requirem
 - 5.1: Visual design specs (Visual Designer)
 - 5.2: Image generation (Image Specialist)
 - 5.3: Slide building (Slide Builder)
+- 5.4: Data visualization (if data present)
+  - 5.4.1: Data transformation (Data Transformer)
+  - 5.4.2: Chart design and implementation (Web Chart Designer)
+  - 5.4.3: Responsive compatibility validation (Responsive Specialist)
 
-**Deliverable**: Complete slide deck in Google Slides
-**Quality Gate**: All slides built, theme applied, images inserted
+**Deliverable**: Complete slide deck in Google Slides (with interactive charts if applicable)
+**Quality Gate**: All slides built, theme applied, images inserted, charts validated
 
 ### Phase 6: Quality Review
 **Agent**: Quality Reviewer
@@ -140,6 +148,19 @@ A professional slide production team following an 8-phase workflow from requirem
 - Text density limits (6 bullets max, 10 words each)
 - Image quality requirements (1920x1080 full-bleed)
 
+### Data Visualization Standards (`rules/data-visualization-standards.md`)
+- Chart type selection rules (line for trends, bar for comparisons, pie for proportions)
+- Colorblind-friendly palettes (distinct hues, pattern redundancy)
+- Interactivity standards (tooltips, zoom, animations)
+- Performance requirements (load time <2s, 60 FPS animations)
+- Data accuracy and source citation requirements
+
+### Responsive Chart Requirements (`rules/responsive-chart-requirements.md`)
+- Breakpoint standards (mobile 320-767px, tablet 768-1023px, desktop 1024px+)
+- Touch interaction requirements (44x44px minimum touch targets)
+- Font size scaling (min 12px on mobile, 16px on desktop)
+- Performance on mobile (load time <2s, maintain 60 FPS)
+
 ---
 
 ## Skills
@@ -152,6 +173,18 @@ Generate custom images using DALL-E 3 with precise prompts
 
 ### Slide Formatting (`skills/slide-formatting/SKILL.md`)
 Apply consistent visual formatting (fonts, colors, spacing, alignment)
+
+### Chart Library Integration (`skills/chart-library-integration/SKILL.md`)
+Select and integrate JavaScript chart libraries (Chart.js, D3.js, ECharts, ApexCharts) with configuration templates
+
+### Data Transformation (`skills/data-transformation/SKILL.md`)
+Transform raw data from Excel, CSV, JSON, or APIs into visualization-ready formats with cleaning and aggregation
+
+### Mermaid Diagram Generation (`skills/mermaid-diagram/SKILL.md`)
+Create technical diagrams using Mermaid syntax (flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts)
+
+### Browser Compatibility Check (`skills/browser-compatibility/SKILL.md`)
+Verify web chart compatibility across browsers and recommend polyfills using Can I Use database
 
 ---
 
@@ -170,7 +203,9 @@ Phase 2: Content Researcher
     ↓
 Phase 3-4: Story Designer
     ↓
-Phase 5: Visual Designer → Image Specialist → Slide Builder
+Phase 5.0-5.3: Visual Designer → Image Specialist → Slide Builder
+    ↓
+Phase 5.4 (if data visualization needed): Data Transformer → Web Chart Designer → Responsive Specialist
     ↓
 Phase 6: Quality Reviewer
     ↓
@@ -192,7 +227,8 @@ Final Delivery to User
 | 2 → 3 | Content gathered | Optional |
 | 3 → 4 | Outline structured | ✅ Yes |
 | 4 → 5 | Story finalized | ✅ Yes |
-| 5 → 6 | Slides built | Optional |
+| 5.3 → 5.4 | Slides built, data viz needs identified | Optional |
+| 5.4 → 6 | Charts validated (accuracy, responsiveness, performance) | Optional |
 | 6 → 7 | No critical issues | If issues fixed |
 | 7 → 8 | Speech ready | Optional |
 | 8 → Delivery | Package complete | ✅ Yes |
@@ -264,10 +300,11 @@ This team structure follows A-Team standards:
 
 ## Version
 
-**Version**: 1.0
-**Created**: 2026-02-11
+**Version**: 2.0
+**Last Updated**: 2026-02-11
 **Architecture**: A-Team Standard
-**Total Files**: 20 (.md files)
+**Total Files**: 27 (.md files)
+**Upgrade**: Added data visualization capabilities (Phase 5.4 with 3 new agents, 4 new skills, 2 new rules)
 
 ---
 

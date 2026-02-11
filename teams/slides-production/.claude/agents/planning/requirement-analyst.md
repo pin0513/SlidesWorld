@@ -45,6 +45,9 @@ Gather and document complete requirements for slide production through structure
 - **Existing Materials**: Are there reference materials or previous versions?
 - **Key Messages**: What are the 3 most important takeaways?
 - **Success Criteria**: How will the user measure success?
+- **Data Availability**: Are there numerical data, statistics, or metrics to visualize?
+- **Data Sources**: Where does data come from (Excel, CSV, API, Database)?
+- **Interactivity Needs**: Will audience interact with data (drill-down, filters)?
 
 ### Nice to Have
 - **Preferred Examples**: Any presentations the user admires?
@@ -65,6 +68,14 @@ Based on initial answers, ask:
 - "What tone would you like - formal and data-driven, or casual and storytelling?"
 - "Are there any specific sections or topics that must be included?"
 - "Do you have existing content or research I can build from?"
+
+### Data Visualization Questions
+If data or metrics mentioned:
+- "Do you have numerical data or statistics to include in the presentation?"
+- "What format is your data in (Excel, CSV, database, API)?"
+- "Do you need interactive charts (web-based) or static images (PDF export)?"
+- "What level of interactivity do you need (hover tooltips, drill-down, filters)?"
+- "Are there specific chart types you prefer (bar, line, pie, flowchart)?"
 
 ### Specialized Mode Questions
 If keywords detected:
@@ -106,6 +117,14 @@ If keywords detected:
 - **Presentation Context**: [Where/when presented]
 - **Existing Materials**: [Links or attachments]
 - **Interactivity**: [Q&A, polls, exercises]
+
+## Data Visualization Requirements
+- **Data Included**: [Yes / No]
+- **Data Sources**: [Excel, CSV, JSON, API, Database]
+- **Data Format**: [Tabular, Time-series, Hierarchical, Network]
+- **Chart Type Preference**: [Bar, Line, Pie, Flowchart, Diagram, None specified]
+- **Interactivity Level**: [Static images / Basic tooltips / Advanced interactions]
+- **Export Format**: [Web-based / PDF / Both]
 
 ## User Approval
 - [ ] User has reviewed and approved this requirements document

@@ -67,6 +67,18 @@ Perform thorough quality assurance on completed slide deck. Check for spelling/g
 - [ ] Backgrounds render correctly
 - [ ] Animations/transitions are appropriate (if used)
 
+### Data Visualization Quality (if applicable)
+- [ ] Chart type appropriate for data characteristics
+- [ ] Data accuracy verified (matches source data)
+- [ ] Chart labels, legends, and titles are clear
+- [ ] Key insights highlighted with annotations
+- [ ] Interactive features work correctly (hover, click, zoom)
+- [ ] Chart renders correctly in target browsers
+- [ ] Responsive design works on mobile/tablet/desktop
+- [ ] Static fallback provided for PDF export
+- [ ] Color palette is colorblind-friendly
+- [ ] Chart performance acceptable (load time, FPS)
+
 ### Accessibility
 - [ ] Color contrast meets WCAG AA (4.5:1 for text)
 - [ ] Font sizes meet minimums (18pt body, 28pt headings)
@@ -111,7 +123,16 @@ For each slide:
 3. Check alt text is present for all images
 4. Test presentation on different screen sizes
 
-### Step 5: Requirements Validation
+### Step 5: Data Visualization Review (if applicable)
+1. Verify chart data accuracy (compare to source data)
+2. Test interactive features (hover, click, zoom, drill-down)
+3. Check chart rendering in Chrome, Firefox, Safari, Edge
+4. Test responsive design on mobile, tablet, desktop
+5. Verify colorblind-friendly palette used
+6. Ensure static fallback exists for PDF export
+7. Validate chart performance (load time <2s, 60 FPS)
+
+### Step 6: Requirements Validation
 1. Compare final deck against original requirements
 2. Verify key messages are present
 3. Check specialized mode compliance

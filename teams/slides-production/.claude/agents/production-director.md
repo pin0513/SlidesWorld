@@ -66,11 +66,19 @@ Orchestrate the complete slide production lifecycle from initial requirements to
 - [ ] Key messages identified for each slide
 - [ ] Story Designer confirms narrative coherence
 
-### Phase 5 → Phase 6 (Visual → Review)
+### Phase 5.3 → Phase 5.4 (Slide Building → Data Visualization)
 - [ ] All slides built in target format (Google Slides)
 - [ ] Visual theme applied consistently
 - [ ] Images generated or sourced for all required slides
 - [ ] Slide Builder confirms production completion
+- [ ] Data visualization needs identified
+
+### Phase 5.4 → Phase 6 (Data Visualization → Review)
+- [ ] All data transformed and validated (Data Transformer)
+- [ ] Charts and diagrams implemented (Web Chart Designer)
+- [ ] Responsive compatibility verified (Responsive Specialist)
+- [ ] Interactive features tested
+- [ ] Static fallbacks provided for PDF export
 
 ### Phase 6 → Phase 7 (Review → Speech Prep)
 - [ ] Quality review completed with no critical issues
@@ -86,6 +94,80 @@ Orchestrate the complete slide production lifecycle from initial requirements to
 - [ ] Slides exported in requested formats (PDF, PPTX, link)
 - [ ] All supporting documents packaged
 - [ ] Export Specialist confirms delivery completeness
+
+## Data Visualization Decision Framework
+
+### When to Activate Data Visualization (Phase 5.4)
+
+Activate Web Chart Designer when slide content includes:
+- **Numerical Data**: Statistics, percentages, metrics, financial data
+- **Trends**: Changes over time, growth patterns, forecasts
+- **Comparisons**: Before/after, category comparisons, rankings
+- **Proportions**: Market share, budget allocation, composition
+- **Relationships**: Correlations, dependencies, network connections
+- **Complex Information**: Architecture diagrams, process flows, system maps
+
+### Chart Type Selection Decision Tree
+
+**For Trends Over Time**:
+- Line Chart: Continuous data (sales growth, user adoption)
+- Area Chart: Cumulative trends or stacked components
+- Gantt Chart: Project timeline and dependencies
+
+**For Comparisons**:
+- Bar Chart (Vertical): Compare values across categories (quarterly revenue)
+- Bar Chart (Horizontal): Compare many categories (top 10 products)
+- Grouped Bar: Compare multiple series across categories
+- Stacked Bar: Show composition and comparison
+
+**For Proportions**:
+- Pie Chart: Parts of a whole (max 5-6 segments)
+- Donut Chart: Proportion with center label for total
+- Treemap: Hierarchical proportions
+
+**For Distributions**:
+- Histogram: Data distribution (age ranges, score ranges)
+- Scatter Plot: Correlation between two variables
+- Heatmap: Patterns in large datasets
+
+**For Technical Diagrams**:
+- Flowchart: Process steps and decisions (Mermaid)
+- Sequence Diagram: System interactions over time (Mermaid)
+- Class Diagram: Object-oriented structures (Mermaid, UML)
+- ER Diagram: Database relationships (Mermaid)
+- Architecture Diagram: System architecture (Mermaid, PlantUML)
+
+### Interactive vs Static Chart Decision
+
+**Use Interactive Charts (HTML/JS) when**:
+- Web-based presentation format
+- Audience will interact with data (drill-down, filters, tooltips)
+- Complex datasets requiring exploration
+- Executive presentations with Q&A (data on demand)
+
+**Use Static Charts (Images) when**:
+- PDF export format required
+- Simple data presentation (no interaction needed)
+- Presentation on projector (no web access)
+- Quick slide creation (no time for web development)
+
+### Data Complexity Assessment
+
+**Simple Data** (skip Phase 5.4):
+- Fewer than 5 data points
+- Single metric or simple comparison
+- Use text or simple icon instead of chart
+
+**Moderate Data** (use Phase 5.4):
+- 5-50 data points
+- Multi-series or time-series data
+- Standard chart types sufficient (Chart.js, ECharts)
+
+**Complex Data** (use Phase 5.4 with D3.js):
+- 50+ data points
+- Multiple dimensions or hierarchical data
+- Custom visualizations required
+- Advanced interactivity needed
 
 ## Specialized Mode Activation
 
@@ -114,6 +196,9 @@ Action: Invoke english-teaching-expert skill at Phase 4 to align content with le
 | 5.1 | Visual Designer | - |
 | 5.2 | Image Specialist | - |
 | 5.3 | Slide Builder | Visual Designer (theme reference) |
+| 5.4.1 | Data Transformer | - |
+| 5.4.2 | Web Chart Designer | Data Transformer (data source) |
+| 5.4.3 | Responsive Specialist | Web Chart Designer (compatibility) |
 | 6 | Quality Reviewer | All previous agents (for clarification) |
 | 7 | Speech Coach, QA Specialist | - |
 | 8 | Export Specialist | - |

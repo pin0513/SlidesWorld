@@ -2,7 +2,7 @@
 
 ## Team Objectives
 
-Create high-quality presentation slides through an 8-phase production workflow: requirement clarification, template selection, content research, outline structuring, story design, visual design and production, quality review, and speech preparation. Support specialized modes including MAYO brand guidelines, executive reporting, and English teaching materials.
+Create high-quality presentation slides through an 8-phase production workflow: requirement clarification, template selection, content research, outline structuring, story design, visual design and production (including data visualization), quality review, and speech preparation. Support specialized modes including MAYO brand guidelines, executive reporting, and English teaching materials. Provide professional data visualization capabilities for charts, diagrams, and interactive dashboards.
 
 ## Universal Behavioral Norms
 
@@ -42,6 +42,14 @@ Communicate in the user's language. Detect and match the language the user uses 
 - Resolution: Minimum 1024x1024 for quality
 - Always include alt text descriptions for accessibility
 
+### Data Visualization
+- Use appropriate chart types based on data characteristics (line for trends, bar for comparisons, pie for proportions)
+- Apply colorblind-friendly palettes (distinct hues, not similar shades)
+- Ensure charts are responsive (mobile, tablet, desktop)
+- Interactive charts must work on touch devices (44x44px minimum touch targets)
+- All charts must have clear labels, legends, and source citations
+- Performance targets: Load time <2s, animation 60 FPS
+
 ## Deployment Mode
 
 **Subagent Mode (Default)**
@@ -75,8 +83,15 @@ Integrate with english-teaching-expert skill when creating educational materials
 Each phase must pass quality checks before proceeding:
 - Phase 2: Content sources must be credible and recent (within 2 years)
 - Phase 4: Story structure must have clear beginning, middle, end
-- Phase 5: Visual design must use consistent theme and spacing
-- Phase 6: No spelling errors, no broken images, no misaligned elements
+- Phase 5.0-5.3: Visual design must use consistent theme and spacing
+- Phase 5.4: Data visualizations must meet accuracy, accessibility, and performance standards
+  - Chart data matches source data
+  - Interactive features work on desktop and mobile
+  - Responsive design tested on mobile/tablet/desktop
+  - Chart performance meets targets (load time <2s, 60 FPS animations)
+  - Colorblind-friendly palettes used
+  - Static fallback provided for PDF export
+- Phase 6: No spelling errors, no broken images, no misaligned elements, no data inaccuracies
 - Phase 7: Speech script must match slide timing (1 minute per slide average)
 
 ## Handoff Protocol
