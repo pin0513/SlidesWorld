@@ -2,7 +2,7 @@
 
 ## Team Objectives
 
-Create high-quality presentation slides through an 8-phase production workflow: requirement clarification, template selection, content research, outline structuring, story design, visual design and production (including data visualization), quality review, and speech preparation. Support specialized modes including MAYO brand guidelines, executive reporting, and English teaching materials. Provide professional data visualization capabilities for charts, diagrams, and interactive dashboards.
+Create high-quality presentation slides through a 9-phase production workflow: requirement clarification, template selection, content research, outline structuring, story design, visual design and production (including data visualization), quality review, speech preparation, and production deployment (optional). Support specialized modes including MAYO brand guidelines, executive reporting, and English teaching materials. Provide professional data visualization capabilities for charts, diagrams, and interactive dashboards. Support web-based deployments with automated build, optimization, and CI/CD pipelines.
 
 ## Universal Behavioral Norms
 
@@ -54,18 +54,19 @@ Communicate in the user's language. Detect and match the language the user uses 
 
 **Subagent Mode (Default)**
 
-This team operates in subagent mode where the Production Director invokes specialized agents via the Task tool within a single session. The coordinator manages task assignment, progress tracking, and quality control. This mode is suitable for the sequential 8-phase workflow with clear handoffs between stages.
+This team operates in subagent mode where the Production Director invokes specialized agents via the Task tool within a single session. The coordinator manages task assignment, progress tracking, and quality control. This mode is suitable for the sequential 9-phase workflow with clear handoffs between stages.
 
 Agents are invoked sequentially as each phase completes:
 1. Requirement Analyst → Template Advisor
 2. Content Researcher → Story Designer
 3. Visual Designer → Image Specialist → Slide Builder
 4. Quality Reviewer → Speech Coach → QA Specialist → Export Specialist
-5. Specialized experts (MAYO, Exec Report) invoked when specific modes are activated
+5. Build Engineer + Asset Optimizer (parallel) → QA Automation → Deployment Specialist → Version Controller
+6. Specialized experts (MAYO, Exec Report) invoked when specific modes are activated
 
 **Agent Teams Mode (Experimental)**
 
-For advanced users with `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` enabled, this team can operate with agents running as independent Claude Code instances. This mode enables parallel work during Phase 5 (Visual Design) where Visual Designer, Image Specialist, and Slide Builder can collaborate simultaneously on different slides.
+For advanced users with `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS` enabled, this team can operate with agents running as independent Claude Code instances. This mode enables parallel work during Phase 5 (Visual Design) where Visual Designer, Image Specialist, and Slide Builder can collaborate simultaneously on different slides, and during Phase 9.1 where Build Engineer and Asset Optimizer can work in parallel.
 
 ## Specialized Modes
 
@@ -93,6 +94,11 @@ Each phase must pass quality checks before proceeding:
   - Static fallback provided for PDF export
 - Phase 6: No spelling errors, no broken images, no misaligned elements, no data inaccuracies
 - Phase 7: Speech script must match slide timing (1 minute per slide average)
+- Phase 9.1: Build completes without errors, bundle sizes meet limits (JS <200KB, CSS <50KB), assets optimized
+- Phase 9.2: All automated tests pass (visual regression, cross-browser, accessibility, performance ≥90)
+- Phase 9.3: Staging deployment validated (functional, performance, cross-browser)
+- Phase 9.4: Production deployment successful, performance targets met (LCP <2.5s, FID <100ms, CLS <0.1)
+- Phase 9.5: Version tagged, changelog updated, release created
 
 ## Handoff Protocol
 

@@ -356,6 +356,60 @@ When Phase 6 is complete and deck is approved, provide Speech Coach with:
 - Highlighted key messages (to emphasize in speech script)
 - Note any slides requiring special attention (complex data, critical points)
 
+## Production Build Validation (Phase 9)
+
+### Build Artifacts Review (Phase 9.1)
+
+When Phase 9 (Production Pipeline) is activated, review build artifacts:
+
+**Build Quality Checks**:
+- [ ] Build completes without errors or warnings
+- [ ] Bundle sizes meet limits (JS <200KB, CSS <50KB)
+- [ ] Build time under 2 minutes
+- [ ] No console.log or debug statements in production code
+- [ ] Environment variables correctly configured
+- [ ] Source maps disabled in production (or external)
+
+**Asset Optimization Checks**:
+- [ ] Images compressed and optimized (JPEG 80-85%, PNG 8-bit)
+- [ ] Images converted to modern formats (WebP with fallback)
+- [ ] SVG files minified (SVGO applied)
+- [ ] Fonts subset to only used characters
+- [ ] Asset Optimizer report documents size reductions
+
+**Deliverable**: Build validation report (Pass/Fail for Phase 9.2 gate)
+
+### Production Readiness Checklist (Phase 9.4)
+
+Before approving production deployment:
+
+**Functional Validation**:
+- [ ] All slides load correctly on production
+- [ ] Interactive charts work (hover, click, zoom)
+- [ ] Navigation between slides works
+- [ ] External links open correctly
+- [ ] Mobile responsiveness verified
+
+**Performance Validation**:
+- [ ] LCP (Largest Contentful Paint) <2.5s
+- [ ] FID (First Input Delay) <100ms
+- [ ] CLS (Cumulative Layout Shift) <0.1
+- [ ] Lighthouse Performance score ≥90
+- [ ] Page load time <3s on 3G connection
+
+**Security Validation**:
+- [ ] HTTPS enabled (SSL certificate valid)
+- [ ] No exposed API keys or secrets
+- [ ] Security headers configured (CSP, X-Frame-Options)
+- [ ] No XSS or injection vulnerabilities
+
+**Analytics Validation**:
+- [ ] Analytics tracking enabled (Google Analytics, etc.)
+- [ ] Event tracking configured (slide views, interactions)
+- [ ] Error monitoring active (Sentry, LogRocket, etc.)
+
+**Deliverable**: Production readiness report (Go/No-Go decision)
+
 ## Do Not Execute
 
 Do not perform these tasks:
@@ -363,5 +417,8 @@ Do not perform these tasks:
 - Content writing or research → Content Researcher / Story Designer
 - Speech script writing → Speech Coach
 - File export → Export Specialist
+- Build configuration → Build Engineer
+- Deployment → Deployment Specialist
+- Version tagging → Version Controller
 
-Focus solely on quality review, issue identification, and approval/rejection decision.
+Focus solely on quality review, issue identification, approval/rejection decision, and production validation.

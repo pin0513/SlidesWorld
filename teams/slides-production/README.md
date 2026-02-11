@@ -2,21 +2,22 @@
 
 ## Overview
 
-A professional slide production team following an 8-phase workflow from requirements clarification to final delivery. Built on A-Team architecture standards with flat coordination structure.
+A professional slide production team following a 9-phase workflow from requirements clarification to final production deployment. Built on A-Team architecture standards with flat coordination structure.
 
 **Team Name**: slides-production
 **Deployment Mode**: Subagent (sequential workflow with Production Director coordination)
-**Total Agents**: 17 (1 coordinator + 16 specialists)
-**Workflow Phases**: 8 phases with quality gates (Phase 5.4 added for data visualization)
+**Total Agents**: 21 (1 coordinator + 20 specialists)
+**Workflow Phases**: 9 phases with quality gates (Phase 5.4: data visualization, Phase 9: production pipeline)
 **Specialized Modes**: MAYO Brand, Executive Reporting, English Teaching
 **Data Visualization**: Interactive charts (Chart.js, D3.js, ECharts, ApexCharts), Mermaid diagrams, responsive design
+**Production Pipeline**: Automated build, asset optimization, CI/CD, deployment, version control
 
 ---
 
 ## Team Structure
 
 ### Coordinator
-- **Production Director** (`production-director.md`) - Orchestrates 8-phase workflow, manages task delegation, enforces quality gates
+- **Production Director** (`production-director.md`) - Orchestrates 9-phase workflow, manages task delegation, enforces quality gates
 
 ### Planning Agents (Phase 1-2)
 - **Requirement Analyst** (`planning/requirement-analyst.md`) - Clarifies requirements, detects specialized modes
@@ -31,9 +32,13 @@ A professional slide production team following an 8-phase workflow from requirem
 - **Data Transformer** (`design/data-transformer.md`) - Transforms raw data (Excel, CSV, JSON) into visualization-ready formats
 - **Responsive Specialist** (`design/responsive-specialist.md`) - Ensures charts render correctly on mobile, tablet, desktop
 
-### Production Agents (Phase 5-6)
+### Production Agents (Phase 5-6, 9)
 - **Slide Builder** (`production/slide-builder.md`) - Builds slides in Google Slides format
-- **Quality Reviewer** (`production/quality-reviewer.md`) - Conducts comprehensive quality review
+- **Quality Reviewer** (`production/quality-reviewer.md`) - Conducts comprehensive quality review and production validation
+- **Build Engineer** (`production/build-engineer.md`) - Configures build pipeline, bundles assets, optimizes performance
+- **Asset Optimizer** (`production/asset-optimizer.md`) - Optimizes images, SVGs, and fonts for minimal file size
+- **Deployment Specialist** (`production/deployment-specialist.md`) - Deploys to hosting platforms, configures CDN and caching
+- **Version Controller** (`production/version-controller.md`) - Manages git versioning, changelog generation, release tagging
 
 ### Delivery Agents (Phase 7-8)
 - **Speech Coach** (`delivery/speech-coach.md`) - Writes presentation script with timing
@@ -46,7 +51,7 @@ A professional slide production team following an 8-phase workflow from requirem
 
 ---
 
-## 8-Phase Workflow
+## 9-Phase Workflow
 
 ### Phase 1: Requirement Clarification
 **Agent**: Requirement Analyst
@@ -102,6 +107,34 @@ A professional slide production team following an 8-phase workflow from requirem
 **Deliverable**: Final package (PDF, PPTX, Google Slides link, speech script, Q&A guide)
 **Quality Gate**: User approves delivery package
 
+### Phase 9: Production & Deployment (Optional)
+**When to Activate**: User requests web-based presentation deployment with interactive charts or custom domain hosting
+
+#### Phase 9.1: Build & Optimization
+**Agents**: Build Engineer, Asset Optimizer (parallel)
+**Deliverable**: Production bundles (JS <200KB, CSS <50KB), optimized assets
+**Quality Gate**: Build completes without errors, bundle sizes within limits
+
+#### Phase 9.2: Quality Assurance
+**Skill**: QA Automation
+**Deliverable**: Test reports (visual regression, cross-browser, accessibility, performance ≥90)
+**Quality Gate**: All automated tests pass
+
+#### Phase 9.3: Staging Deployment
+**Agent**: Deployment Specialist
+**Deliverable**: Staging deployment (https://staging-slides.example.com)
+**Quality Gate**: Staging validated (functional, performance, cross-browser)
+
+#### Phase 9.4: Production Deployment
+**Agent**: Deployment Specialist
+**Deliverable**: Production deployment (https://slides.example.com)
+**Quality Gate**: Production successful, performance targets met (LCP <2.5s, FID <100ms, CLS <0.1)
+
+#### Phase 9.5: Version Tagging
+**Agent**: Version Controller
+**Deliverable**: Git tag (e.g., v1.0.0), CHANGELOG.md, GitHub release
+**Quality Gate**: Version tagged, changelog updated, release created
+
 ---
 
 ## Specialized Modes
@@ -138,7 +171,7 @@ A professional slide production team following an 8-phase workflow from requirem
 ## Rules
 
 ### Phase Gate Protocol (`rules/phase-gate-protocol.md`)
-- Mandatory quality gates between phases
+- Mandatory quality gates between phases (Phases 1-9)
 - User approval required at key transitions
 - Prevents downstream rework
 
@@ -161,30 +194,37 @@ A professional slide production team following an 8-phase workflow from requirem
 - Font size scaling (min 12px on mobile, 16px on desktop)
 - Performance on mobile (load time <2s, maintain 60 FPS)
 
+### Build Standards (`rules/build-standards.md`)
+- Bundle size limits (JS <200KB, CSS <50KB, Total <500KB gzipped)
+- Build time limits (development <10s, production <2min)
+- Browser compatibility (Chrome 90+, Firefox 88+, Safari 14+, Edge 90+)
+- Asset optimization requirements
+
+### Deployment Protocol (`rules/deployment-protocol.md`)
+- Deployment checklist (pre-deployment, staging validation, production approval)
+- Rollback procedures (Vercel, Netlify, GitHub Pages, AWS S3)
+- Staging validation requirements (functional, performance, cross-browser)
+- Production readiness criteria
+
 ---
 
 ## Skills
 
-### Web Research (`skills/web-research/SKILL.md`)
-Search and extract credible information from web sources with proper citations
+### Content & Design Skills
+- **Web Research** (`skills/web-research/SKILL.md`) - Search and extract credible information from web sources with proper citations
+- **Image Generation** (`skills/image-generation/SKILL.md`) - Generate custom images using DALL-E 3 with precise prompts
+- **Slide Formatting** (`skills/slide-formatting/SKILL.md`) - Apply consistent visual formatting (fonts, colors, spacing, alignment)
 
-### Image Generation (`skills/image-generation/SKILL.md`)
-Generate custom images using DALL-E 3 with precise prompts
+### Data Visualization Skills
+- **Chart Library Integration** (`skills/chart-library-integration/SKILL.md`) - Select and integrate JavaScript chart libraries (Chart.js, D3.js, ECharts, ApexCharts) with configuration templates
+- **Data Transformation** (`skills/data-transformation/SKILL.md`) - Transform raw data from Excel, CSV, JSON, or APIs into visualization-ready formats with cleaning and aggregation
+- **Mermaid Diagram Generation** (`skills/mermaid-diagram/SKILL.md`) - Create technical diagrams using Mermaid syntax (flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts)
+- **Browser Compatibility Check** (`skills/browser-compatibility/SKILL.md`) - Verify web chart compatibility across browsers and recommend polyfills using Can I Use database
 
-### Slide Formatting (`skills/slide-formatting/SKILL.md`)
-Apply consistent visual formatting (fonts, colors, spacing, alignment)
-
-### Chart Library Integration (`skills/chart-library-integration/SKILL.md`)
-Select and integrate JavaScript chart libraries (Chart.js, D3.js, ECharts, ApexCharts) with configuration templates
-
-### Data Transformation (`skills/data-transformation/SKILL.md`)
-Transform raw data from Excel, CSV, JSON, or APIs into visualization-ready formats with cleaning and aggregation
-
-### Mermaid Diagram Generation (`skills/mermaid-diagram/SKILL.md`)
-Create technical diagrams using Mermaid syntax (flowcharts, sequence diagrams, class diagrams, ER diagrams, Gantt charts)
-
-### Browser Compatibility Check (`skills/browser-compatibility/SKILL.md`)
-Verify web chart compatibility across browsers and recommend polyfills using Can I Use database
+### Production Pipeline Skills
+- **CI/CD Pipeline** (`skills/ci-cd-pipeline/SKILL.md`) - Automate testing, building, and deployment with GitHub Actions workflows (staging, production, preview deployments)
+- **Performance Monitoring** (`skills/performance-monitoring/SKILL.md`) - Track Core Web Vitals (LCP, FID, CLS), bundle size, and performance metrics with Lighthouse CI
+- **QA Automation** (`skills/qa-automation/SKILL.md`) - Automate visual regression (Percy, Chromatic), cross-browser (Playwright, BrowserStack), and accessibility testing (axe-core, Pa11y)
 
 ---
 
@@ -213,7 +253,21 @@ Phase 7: Speech Coach + QA Specialist (parallel)
     ↓
 Phase 8: Export Specialist
     ↓
-Final Delivery to User
+    ├─→ [Skip Phase 9] → Final Delivery to User (if no web deployment)
+    │
+    └─→ [Phase 9 Activated] (if web-based presentation requested)
+        ↓
+    Phase 9.1: Build Engineer + Asset Optimizer (parallel)
+        ↓
+    Phase 9.2: QA Automation (visual regression, cross-browser, accessibility)
+        ↓
+    Phase 9.3: Deployment Specialist (staging deployment)
+        ↓
+    Phase 9.4: Deployment Specialist + Quality Reviewer (production deployment)
+        ↓
+    Phase 9.5: Version Controller (git tag, changelog, release)
+        ↓
+    Final Delivery to User (web-based presentation deployed)
 ```
 
 ---
@@ -231,7 +285,12 @@ Final Delivery to User
 | 5.4 → 6 | Charts validated (accuracy, responsiveness, performance) | Optional |
 | 6 → 7 | No critical issues | If issues fixed |
 | 7 → 8 | Speech ready | Optional |
-| 8 → Delivery | Package complete | ✅ Yes |
+| 8 → 9 or Delivery | Package complete | ✅ Yes |
+| 9.1 → 9.2 | Build completes, bundle sizes within limits | No |
+| 9.2 → 9.3 | All automated tests pass | No |
+| 9.3 → 9.4 | Staging validated | ✅ Yes |
+| 9.4 → 9.5 | Production successful, performance targets met | No |
+| 9.5 → Delivery | Version tagged, changelog updated | No |
 
 ---
 
@@ -246,7 +305,12 @@ Final Delivery to User
 - **Phase 5**: Complete slide deck (Google Slides)
 - **Phase 6**: Quality review report
 - **Phase 7**: Speech script + Q&A guide
-- **Phase 8**: Final package
+- **Phase 8**: Final package (PDF, PPTX, Google Slides link)
+- **Phase 9.1**: Production bundles (dist/ directory, optimized assets)
+- **Phase 9.2**: Test reports (visual regression, cross-browser, accessibility, performance)
+- **Phase 9.3**: Staging deployment URL + validation report
+- **Phase 9.4**: Production deployment URL + performance validation
+- **Phase 9.5**: Git tag, CHANGELOG.md, GitHub release
 
 ### Final Package Contents
 ```
@@ -300,11 +364,13 @@ This team structure follows A-Team standards:
 
 ## Version
 
-**Version**: 2.0
+**Version**: 3.0
 **Last Updated**: 2026-02-11
 **Architecture**: A-Team Standard
-**Total Files**: 27 (.md files)
-**Upgrade**: Added data visualization capabilities (Phase 5.4 with 3 new agents, 4 new skills, 2 new rules)
+**Total Files**: 36 (.md files)
+**Upgrades**:
+- v2.0: Added data visualization capabilities (Phase 5.4 with 3 new agents, 4 new skills, 2 new rules)
+- v3.0: Added production pipeline (Phase 9 with 4 new agents, 3 new skills, 2 new rules)
 
 ---
 
